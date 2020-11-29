@@ -7,7 +7,7 @@ export default class Login extends React.Component {
     this.state = {
       name: "",
       email: "",
-      genger: "",
+      gender: "",
       phNo: "",
       password: "",
       errorMessage: "",
@@ -37,6 +37,7 @@ export default class Login extends React.Component {
     if (
       this.state.name === "" ||
       this.state.email === "" ||
+      this.state.gender === "" ||
       this.state.phNo === "" ||
       this.state.password === ""
     ) {
