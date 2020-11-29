@@ -1,14 +1,13 @@
 import React from "react";
 import "../styles/App.css";
-import Welcome from "./welcome";
-import ErrorMessage from "./errorMessage";
 
 export default class Login extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "",
       email: "",
+      genger: "",
       phNo: "",
       password: "",
       errorMessage: "",
@@ -32,8 +31,6 @@ export default class Login extends React.Component {
     this.setState({ password: event.target.value });
   };
 
-  handleChangeValue = (event) => {};
-
   handleSubmit = () => {
     const alphanumeric = /^[0-9a-zA-Z ]+$/;
     const numbers = /^\d+$/;
@@ -52,6 +49,13 @@ export default class Login extends React.Component {
     }
     if (this.state.email.indexOf("@") < 1) {
       this.setState({ errorMessage: "Email must contain @" });
+      return;
+    }
+
+    if (!this.state.gender) {
+      this.setState({
+        errorMessage: "Please identify as male, female or others"
+      });
       return;
     }
     if (!numbers.test(this.state.phNo)) {
@@ -118,9 +122,13 @@ export default class Login extends React.Component {
           Submit
         </button>
         {this.state.errorMessage && (
-          <ErrorMessage error={this.state.errorMessage} />
+          <div>{this.state.errorMessage}</div>
+          // <ErrorMessage error={this.state.errorMessage} />
         )}
-        {this.state.userName && <Welcome userName={this.state.userName} />}
+        {this.state.userName && (
+          <div>Hello {this.state.userName}</div>
+          // <Welcome userName={this.state.userName} />
+        )}
       </>
     );
   }
