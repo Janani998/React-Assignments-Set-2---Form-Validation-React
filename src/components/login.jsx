@@ -82,7 +82,7 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <>
+      <form>
         <input
           data-testid="name"
           type="text"
@@ -130,7 +130,7 @@ export default class Login extends React.Component {
           <div>Hello {this.state.userName}</div>
           // <Welcome userName={this.state.userName} />
         )}
-      </>
+      </form>
     );
   }
 }
