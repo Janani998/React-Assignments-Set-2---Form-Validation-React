@@ -7,7 +7,7 @@ export default class Login extends React.Component {
     this.state = {
       name: "",
       email: "",
-      gender: "",
+      gender: "male",
       phNo: "",
       password: "",
       errorMessage: "",
@@ -31,13 +31,16 @@ export default class Login extends React.Component {
     this.setState({ password: event.target.value });
   };
 
+  handleChangeValue = (event) => {
+    this.setState({ gender: event.target.value });
+  };
+
   handleSubmit = () => {
     const alphanumeric = /^[0-9a-zA-Z ]+$/;
     const numbers = /^\d+$/;
     if (
       this.state.name === "" ||
       this.state.email === "" ||
-      this.state.gender === "" ||
       this.state.phNo === "" ||
       this.state.password === ""
     ) {
@@ -75,6 +78,7 @@ export default class Login extends React.Component {
       errorMessage: "",
       name: "",
       email: "",
+      gender: "male",
       phNo: "",
       password: ""
     });
@@ -82,7 +86,8 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <form>
+      <>
+        {/* // <form> */}
         <input
           data-testid="name"
           type="text"
@@ -98,12 +103,12 @@ export default class Login extends React.Component {
           onChange={this.handleEmailChange}
         />
         <div data-testid="gender" onChange={this.handleChangeValue}>
-          <input type="radio" value="male" name="gender" checked="checked" />
-          <label for="male">Male</label>
+          <input type="radio" value="male" name="gender" defaultChecked />
+          <label htmlFor="male">Male</label>
           <input type="radio" value="female" name="gender" />
-          <label for="female">Female</label>
+          <label htmlFor="female">Female</label>
           <input type="radio" value="other" name="gender" />
-          <label for="other">Other</label>
+          <label htmlFor="other">Other</label>
         </div>
         <input
           data-testid="phoneNumber"
@@ -130,7 +135,8 @@ export default class Login extends React.Component {
           <div>Hello {this.state.userName}</div>
           // <Welcome userName={this.state.userName} />
         )}
-      </form>
+        {/* // </form> */}
+      </>
     );
   }
 }
