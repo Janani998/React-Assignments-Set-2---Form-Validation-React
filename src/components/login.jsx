@@ -126,14 +126,8 @@ export default class Login extends React.Component {
         <button data-testid="submit" onClick={this.handleSubmit}>
           Submit
         </button>
-        {this.state.errorMessage && (
-          <div>{this.state.errorMessage}</div>
-          // <ErrorMessage error={this.state.errorMessage} />
-        )}
-        {this.state.userName && (
-          <div>Hello {this.state.userName}</div>
-          // <Welcome userName={this.state.userName} />
-        )}
+        {this.state.errorMessage && <div>{this.state.errorMessage}</div>}
+        {this.state.userName && <div>Hello {this.state.userName}</div>}
       </form>
     );
   }
