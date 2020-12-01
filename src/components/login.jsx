@@ -86,7 +86,7 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <input
           data-testid="name"
           type="text"
@@ -123,7 +123,7 @@ export default class Login extends React.Component {
           value={this.state.password}
           onChange={this.handlePasswordChange}
         />
-        <button data-testid="submit" type="submit">
+        <button data-testid="submit" onClick={this.handleSubmit}>
           Submit
         </button>
         {this.state.errorMessage && (
