@@ -111,14 +111,21 @@ export default class Login extends React.Component {
           value={this.state.email}
           onChange={this.handleEmailChange}
         />
-        <div data-testid="gender" onChange={this.handleChangeValue}>
+        {/* <div data-testid="gender" onChange={this.handleChangeValue}>
           <input type="radio" value="male" name="gender" defaultChecked />
           <label htmlFor="male">Male</label>
           <input type="radio" value="female" name="gender" />
           <label htmlFor="female">Female</label>
           <input type="radio" value="other" name="gender" />
           <label htmlFor="other">Other</label>
-        </div>
+        </div> */}
+        <input
+          data-testid="gender"
+          type="text"
+          name="gender"
+          value={this.state.gender}
+          onChange={this.handleChangeValue}
+        />
         <input
           data-testid="phoneNumber"
           type="text"
