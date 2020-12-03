@@ -86,7 +86,7 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <form>
+      <>
         <input
           data-testid="name"
           type="text"
@@ -128,7 +128,7 @@ export default class Login extends React.Component {
         </button>
         {this.state.errorMessage && <div>{this.state.errorMessage}</div>}
         {this.state.userName && <div>Hello {this.state.userName}</div>}
-      </form>
+      </>
     );
   }
 }
