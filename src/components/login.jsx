@@ -44,31 +44,36 @@ export default class Login extends React.Component {
       this.state.phNo === "" ||
       this.state.password === ""
     ) {
-      this.setState({ errorMessage: "All fields are mandatory" });
+      this.setState({ errorMessage: "All fields are mandatory", userName: "" });
       return;
     }
     if (!this.state.name.match(alphanumeric)) {
-      this.setState({ errorMessage: "Name is not alphanumeric" });
+      this.setState({ errorMessage: "Name is not alphanumeric", userName: "" });
       return;
     }
     if (this.state.email.indexOf("@") < 1) {
-      this.setState({ errorMessage: "Email must contain @" });
+      this.setState({ errorMessage: "Email must contain @", userName: "" });
       return;
     }
 
     if (!this.state.gender) {
       this.setState({
-        errorMessage: "Please identify as male, female or others"
+        errorMessage: "Please identify as male, female or others",
+        userName: ""
       });
       return;
     }
     if (!numbers.test(this.state.phNo)) {
-      this.setState({ errorMessage: "Phone Number must contain only numbers" });
+      this.setState({
+        errorMessage: "Phone Number must contain only numbers",
+        userName: ""
+      });
       return;
     }
     if (this.state.password.length < 6) {
       this.setState({
-        errorMessage: "Password must contain atleast 6 letters"
+        errorMessage: "Password must contain atleast 6 letters",
+        userName: ""
       });
       return;
     }
