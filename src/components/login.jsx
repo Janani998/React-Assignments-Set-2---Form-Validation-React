@@ -42,6 +42,7 @@ export default class Login extends React.Component {
       this.state.name === "" ||
       this.state.email === "" ||
       this.state.phNo === "" ||
+      this.state.gender === "" ||
       this.state.password === ""
     ) {
       this.setState({ errorMessage: "All fields are mandatory", userName: "" });
