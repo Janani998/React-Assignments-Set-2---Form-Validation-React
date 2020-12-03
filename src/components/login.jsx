@@ -95,6 +95,7 @@ export default class Login extends React.Component {
         <input
           data-testid="name"
           type="text"
+          name="name"
           placeholder="Name"
           value={this.state.name}
           onChange={this.handleNameChange}
@@ -102,6 +103,7 @@ export default class Login extends React.Component {
         <input
           data-testid="email"
           type="text"
+          name="email"
           placeholder="Email"
           value={this.state.email}
           onChange={this.handleEmailChange}
@@ -117,6 +119,7 @@ export default class Login extends React.Component {
         <input
           data-testid="phoneNumber"
           type="text"
+          name="phoneNumber"
           placeholder="Phone Number"
           value={this.state.phNo}
           onChange={this.handlePhoneNoChange}
@@ -124,6 +127,7 @@ export default class Login extends React.Component {
         <input
           data-testid="password"
           type="password"
+          name="password"
           placeholder="Password"
           value={this.state.password}
           onChange={this.handlePasswordChange}
