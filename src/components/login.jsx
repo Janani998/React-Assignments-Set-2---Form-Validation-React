@@ -15,24 +15,8 @@ export default class Login extends React.Component {
     };
   }
 
-  handleNameChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
-
-  handleEmailChange = (event) => {
-    this.setState({ email: event.target.value });
-  };
-
-  handlePhoneNoChange = (event) => {
-    this.setState({ phNo: event.target.value });
-  };
-
-  handlePasswordChange = (event) => {
-    this.setState({ password: event.target.value });
-  };
-
-  handleChangeValue = (event) => {
-    this.setState({ gender: event.target.value });
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   handleSubmit = () => {
@@ -101,7 +85,7 @@ export default class Login extends React.Component {
           name="name"
           placeholder="Name"
           value={this.state.name}
-          onChange={this.handleNameChange}
+          onChange={this.handleChange}
         />
         <input
           data-testid="email"
@@ -109,22 +93,22 @@ export default class Login extends React.Component {
           name="email"
           placeholder="Email"
           value={this.state.email}
-          onChange={this.handleEmailChange}
+          onChange={this.handleChange}
         />
         <input
           data-testid="gender"
           type="text"
           name="gender"
           value={this.state.gender}
-          onChange={this.handleChangeValue}
+          onChange={this.handleChange}
         />
         <input
           data-testid="phoneNumber"
           type="text"
-          name="phoneNumber"
+          name="phNo"
           placeholder="Phone Number"
           value={this.state.phNo}
-          onChange={this.handlePhoneNoChange}
+          onChange={this.handleChange}
         />
         <input
           data-testid="password"
@@ -132,7 +116,7 @@ export default class Login extends React.Component {
           name="password"
           placeholder="Password"
           value={this.state.password}
-          onChange={this.handlePasswordChange}
+          onChange={this.handleChange}
         />
         <button data-testid="submit" onClick={this.handleSubmit}>
           Submit
